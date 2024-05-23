@@ -18,7 +18,7 @@
 
   
 
-//Right motor 
+
 
 int enableRightMotor=5; 
 
@@ -28,7 +28,7 @@ int rightMotorPin2=8;
 
   
 
-//Left motor 
+
 
 int enableLeftMotor=6; 
 
@@ -46,7 +46,6 @@ void setup()
 
 { 
 
-  // put your setup code here, to run once: 
 
   pinMode(enableRightMotor,OUTPUT); 
 
@@ -84,7 +83,6 @@ void loop()
 
   
 
-  //If distance is within 30 cm then adjust motor direction as below 
 
   if (distance > 0 && distance < DISTANCE_TO_CHECK) 
 
@@ -98,7 +96,6 @@ void loop()
 
         
 
-    //Reverse motors 
 
     rotateMotor(-MAX_MOTOR_ADJUST_SPEED, -MAX_MOTOR_ADJUST_SPEED);         
 
@@ -106,7 +103,6 @@ void loop()
 
      
 
-    //Stop motors 
 
     rotateMotor(0, 0); 
 
@@ -114,7 +110,6 @@ void loop()
 
      
 
-    //Rotate servo to left     
 
     myServo.write(180); 
 
@@ -122,13 +117,11 @@ void loop()
 
   
 
-    //Read left side distance using ultrasonic sensor 
 
     int distanceLeft = mySensor.ping_cm();     
 
   
 
-    //Rotate servo to right 
 
     myServo.write(0);     
 
@@ -136,13 +129,11 @@ void loop()
 
   
 
-    //Read right side distance using ultrasonic sensor    
 
     int distanceRight = mySensor.ping_cm(); 
 
   
 
-    //Bring servo to center 
 
     myServo.write(90);  
 
